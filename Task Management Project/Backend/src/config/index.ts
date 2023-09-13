@@ -13,7 +13,6 @@ export const password = String(process.env.sendinblue_pass);
 export const jwtsecret = String(process.env.JWT_SECRET);
 
 export const APIKey = String(process.env.cloudinary_api_key);
-
 export const APISecret = String(process.env.cloudinary_api_secret);
 export const username = String(process.env.elasticmail_username);
 export const MONGODB_URI = String(process.env.MONGODB_URI);
