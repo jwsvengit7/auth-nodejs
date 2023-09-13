@@ -22,7 +22,6 @@ export const searchPatient = async (req: Request, res: Response) => {
         { lastName: { $regex: search, $options: "i" } },
       ];
     }
-
     const patients: PatientDocument[] = await Patient.find(query).exec();
 
     res.status(200).json(patients);
