@@ -12,7 +12,6 @@ export const createPatient = async (req: Request, res: Response) => {
       height,
       weight,
     });
-
     const savedPatient: PatientDocument = await newPatient.save();
     res.status(201).json(savedPatient);
   } catch (error) {
