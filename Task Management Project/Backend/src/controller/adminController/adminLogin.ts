@@ -30,7 +30,6 @@ export const loginAdmin = async (req: Request, res: Response) => {
     if (!isPasswordMatch) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
-
     const token = generateToken(admin, res);
 
     return res.status(200).json({ message: "Login successful", admin, token });
