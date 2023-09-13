@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const server = String(process.env.smtp_host);
-
 export const port = Number(process.env.smtp_port);
 export const user = String(process.env.sendinblue_user);
 export const password = String(process.env.sendinblue_pass);
