@@ -6,7 +6,7 @@ const db = async (): Promise<void> => {
     await mongoose.connect(MONGODB_URI, {});
     console.log("MongoDB connected Successfully");
   } catch (err) {
-    console.error(`MongoDB connection error: ${err}`);
+    console.error(`MongoDB  error: ${err}`);
     process.exit(1);
   }
 };
