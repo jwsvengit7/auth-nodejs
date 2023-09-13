@@ -9,7 +9,6 @@ export const port = Number(process.env.smtp_port);
 export const user = String(process.env.sendinblue_user);
 
 export const password = String(process.env.sendinblue_pass);
-
 export const jwtsecret = String(process.env.JWT_SECRET);
 export const APIKey = String(process.env.cloudinary_api_key);
 export const APISecret = String(process.env.cloudinary_api_secret);
