@@ -5,6 +5,7 @@ import { createUser } from "../../controller/userController/userSignup";
 import { verifyUser } from "../../controller/userController/userVerification";
 import { forgotPasswordOTP } from "../../controller/userController/userForgotPasswordOTP";
 import { changePassword } from "../../controller/userController/userPasswordReset";
+import { authenticateUser } from "../../middlewares/auth";
 
 const router = express.Router();
 
@@ -14,7 +15,7 @@ router.post("/verify/:id", verifyUser);
 
 router.post("/login", loginUser);
 
-router.put("/update/:userId", updateUserProfile);
+router.put("/update/:userId",authenticateUser, updateUserProfile);
 
 router.post("/update", forgotPasswordOTP);
 router.patch("/update", changePassword);

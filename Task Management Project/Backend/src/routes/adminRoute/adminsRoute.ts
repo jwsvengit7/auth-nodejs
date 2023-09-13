@@ -9,19 +9,19 @@ import { createAdmin } from "../../controller/adminController/adminSignup";
 import { loginAdmin } from "../../controller/adminController/adminLogin";
 import { deletePatient } from "../../controller/adminController/deletePatient";
 import { deleteUser } from "../../controller/adminController/deleteUser";
-
+import { authenticateUser } from "../../middlewares/auth";
 const router = express.Router();
 
 router.post("/register", createAdmin);
 router.post("/login", loginAdmin);
 
 // User Route
-router.get("/getUsers", getAllUsers);
-router.get("/getUser/:id", getUser);
+router.get("/getUsers",authenticateUser, getAllUsers);
+router.get("/getUser/:id",authenticateUser, getUser);
 
 //patient Route
-router.get("/getPatients", getAllPatient);
-router.delete("/deletePatient/:patientId", deletePatient);
-router.delete("/deleteUser/:id", deleteUser);
+router.get("/getPatients",authenticateUser, getAllPatient);
+router.delete("/deletePatient/:patientId",authenticateUser, deletePatient);
+router.delete("/deleteUser/:id",authenticateUser, deleteUser);
 
 export default router;

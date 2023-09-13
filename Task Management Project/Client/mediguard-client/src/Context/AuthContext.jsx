@@ -1,5 +1,5 @@
 import React, {createContext} from 'react';
-import { apiPost } from './Api/axios';
+import {  apiPost } from './Api/axios';
 import {toast} from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -9,6 +9,7 @@ export const dataContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 const DataProvider = ({children}) => {
+
 
 
   /**=================Registration =================================== */
@@ -57,6 +58,9 @@ const DataProvider = ({children}) => {
       toast.error(error.response.data.Error)
     }
   }
+ 
+
+
 
     return (
         <dataContext.Provider
@@ -65,6 +69,8 @@ const DataProvider = ({children}) => {
             {children}
         </dataContext.Provider>
     )
+
+
 
 }
 
