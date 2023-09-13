@@ -22,7 +22,6 @@ export const loginAdmin = async (req: Request, res: Response) => {
     const admin: AdminDocument | null = await Admin.findOne({
       email: trimmedEmail,
     });
-
     if (!admin) {
       return res.status(404).json({ error: "Admin not found" });
     }
