@@ -18,7 +18,6 @@ export const loginAdmin = async (req: Request, res: Response) => {
         .status(400)
         .json({ error: validationResult.error.details[0].message });
     }
-
     const admin: AdminDocument | null = await Admin.findOne({
       email: trimmedEmail,
     });
