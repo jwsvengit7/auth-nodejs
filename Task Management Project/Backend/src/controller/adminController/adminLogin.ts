@@ -25,7 +25,6 @@ export const loginAdmin = async (req: Request, res: Response) => {
     if (!admin) {
       return res.status(404).json({ error: "Admin not found" });
     }
-
     const isPasswordMatch = await bcrypt.compare(password, admin.password);
 
     if (!isPasswordMatch) {
