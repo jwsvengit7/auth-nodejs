@@ -18,10 +18,5 @@ export const APISecret = String(process.env.cloudinary_api_secret);
 
 export const username = String(process.env.elasticmail_username);
 
-// export const password = String(process.env.elasticmail_password);
-
-// export const server = String(process.env.elasticmail_server);
-
-// export const port = Number(process.env.elasticmail_port);
 
 export const MONGODB_URI = String(process.env.MONGODB_URI);
